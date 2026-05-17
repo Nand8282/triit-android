@@ -1,144 +1,89 @@
-# Triit - Hyper-Local Carpooling Platform
+# Triit - Hyper-Local Peer-to-Peer Carpooling Platform
 
-A privacy-first, peer-to-peer hyper-local carpooling platform designed specifically for Indian commuters.
+![Triit Logo](https://img.shields.io/badge/Triit-v1.0.0-blue?style=for-the-badge)
 
-## 🚀 Core Concept
+**Triit** is a privacy-first, community-driven carpooling application designed specifically for Indian commuters. Connect with people living within a 400-meter radius to share daily commutes safely and affordably.
 
-Triit connects people living within a **400-meter radius** to share daily commutes safely and affordably. The platform focuses on:
+## 🎯 Core Features
 
-- ✅ Reducing traffic congestion
-- ✅ Lowering fuel and travel costs
-- ✅ Encouraging community-based ride sharing
-- ✅ Maintaining user privacy
-- ✅ Providing AI-powered safety guidance
+- **Hyper-Local Matching**: Find commuters within 400m radius
+- **Privacy-First Design**: Minimal data collection, decentralized approach
+- **Zero Commission**: Direct peer-to-peer coordination
+- **AI Safety Assistant**: Gemini-powered real-time safety recommendations
+- **Trust-Based Community**: Ratings, reviews, and community badges
+- **Live Tracking**: Google Maps integration for real-time ride updates
+- **Emergency SOS**: One-tap emergency alert system
+- **Multi-language Support**: Hindi, English, and regional languages (planned)
 
-**Zero-commission community-driven model** where drivers and passengers directly coordinate rides.
+## 📱 Screenshots
 
----
+Login Screen → Home Screen → Ride Matching → Safety Tips
 
-## 📱 Features
+## 🏗️ Architecture
 
-### 1. Authentication
-- Mobile OTP verification
-- Google Sign-In
-- Profile setup with vehicle details
-- Trust score & ratings system
-
-### 2. Home Screen
-- Current location display
-- Nearby ride matches (400m radius)
-- AI Safety Tips card
-- Smart FAB & Bottom Navigation
-
-### 3. Ride Matching System
-- Intelligent matching based on location, destination, time
-- Show nearby neighbors first
-- Integrated map visualization
-- Trust score & estimated cost display
-
-### 4. AI Safety Assistant
-- Gemini AI-powered real-time safety tips
-- Safe pickup suggestions
-- Late-night travel risk detection
-- AI commute recommendations
-
-### 5. Live Map & Tracking
-- Google Maps integration
-- Real-time route display
-- Live ride tracking
-- Pickup/drop visualization
-
-### 6. Community Features
-- Ride history & reviews
-- Community badges
-- Trusted neighbor labels
-- Emergency SOS button
-- Share live ride status
-
-### 7. Notifications
-- Ride request alerts
-- Match notifications
-- Driver arrival alerts
-- Safety reminders
-
----
-
-## 🛠 Tech Stack
-
+### Tech Stack
 - **Language**: Kotlin
-- **UI Framework**: Jetpack Compose
-- **Architecture**: MVVM + Repository Pattern
-- **Authentication**: Firebase Auth
-- **Database**: Firebase Firestore
+- **UI Framework**: Jetpack Compose with Material 3
+- **Architecture**: MVVM + Clean Architecture
+- **Dependency Injection**: Hilt
+- **Asynchronous Programming**: Coroutines + Flow
+- **Backend**: Firebase (Auth, Firestore, Messaging)
+- **AI Integration**: Google Gemini API
 - **Maps**: Google Maps API
-- **AI**: Gemini API
-- **Async**: Coroutines + Flow
-- **DI**: Hilt
-- **Design**: Material 3
+- **Networking**: Retrofit + Moshi
+- **Image Loading**: Coil
+- **Logging**: Timber
 
----
-
-## 📁 Project Structure
+### Project Structure
 
 ```
-triit-android/
-├── app/
-│   ├── src/
-│   │   ├── main/
-│   │   │   ├── kotlin/com/triit/
-│   │   │   │   ├── di/                    # Dependency Injection
-│   │   │   │   ├── data/                  # Data layer (Repositories, API)
-│   │   │   │   ├── domain/                # Domain layer (Models, Use cases)
-│   │   │   │   ├── presentation/          # UI layer (ViewModels, Screens)
-│   │   │   │   │   ├── screens/
-│   │   │   │   │   ├── components/
-│   │   │   │   │   ├── theme/
-│   │   │   │   │   └── navigation/
-│   │   │   │   ├── TriitApp.kt            # Main App
-│   │   │   │   └── MainActivity.kt
-│   │   │   └── AndroidManifest.xml
-│   │   └── test/
-│   ├── build.gradle.kts
-│   └── proguard-rules.pro
-├── gradle/
-│   └── libs.versions.toml
-├── build.gradle.kts
-├── settings.gradle.kts
-└── README.md
+app/src/main/java/com/triit/
+├── domain/
+│   ├── model/          # Core data models
+│   └── repository/     # Repository interfaces
+├── data/
+│   ├── repository/     # Repository implementations
+│   ├── remote/         # Firebase/API integration
+│   └── di/             # Dependency injection modules
+├── presentation/
+│   ├── ui/
+│   │   ├── screen/     # Compose screens
+│   │   ├── component/  # Reusable components
+│   │   └── theme/      # Material 3 theming
+│   └── viewmodel/      # MVVM ViewModels
+└── MainActivity.kt
 ```
-
----
 
 ## 🎨 Design System
 
 ### Colors
-- **Primary**: Deep Blue (`#0A1E3F`)
-- **Accent**: Electric Purple (`#7C3AED`)
-- **Background**: Dark (`#0F172A`)
-- **Surface**: (`#1E293B`)
+- **Primary**: Deep Blue `#0B1E3F`
+- **Accent**: Electric Purple `#8B5CF6`
+- **Secondary**: Teal `#14B8A6`
+- **Accent Green**: `#10B981`
 
-### Fonts
-- Roboto (Material 3 default)
+### Typography
+- **Font Family**: Poppins (Bold, SemiBold, Medium, Regular)
+- **Material 3 Compliant**: Full text hierarchy
+- **Dark Mode Support**: Optimized for both light and dark themes
 
 ### Components
-- Rounded cards (16dp)
-- Glassmorphism effects
-- Smooth animations
-- Dark mode support
+- Rounded Cards (12dp-16dp border radius)
+- Glassmorphism Effects
+- Smooth Animations
+- Bottom Navigation (4 tabs)
+- Floating Action Button
 
----
-
-## 🔧 Setup Instructions
+## 🚀 Getting Started
 
 ### Prerequisites
-- Android Studio Arctic Fox or newer
-- Kotlin 1.8+
-- Gradle 8.0+
-- Firebase project
-- Google Maps API key
-- Gemini API key
+- Android Studio Giraffe or later
+- Kotlin 1.9.10+
+- JDK 17
+- Android SDK 34 (compileSdk)
+- Min SDK 24
 
-### Installation
+### Setup
 
 1. **Clone the repository**
    ```bash
@@ -146,82 +91,114 @@ triit-android/
    cd triit-android
    ```
 
-2. **Configure Firebase**
+2. **Add Firebase Configuration**
    - Download `google-services.json` from Firebase Console
    - Place in `app/` directory
 
-3. **Add API Keys** (in `local.properties`)
-   ```properties
-   GOOGLE_MAPS_API_KEY=your_key_here
-   GEMINI_API_KEY=your_key_here
-   ```
+3. **Configure Gemini API**
+   - Get API key from Google AI Studio
+   - Add to `build.gradle.kts`:
+     ```kotlin
+     buildConfigField("String", "GEMINI_API_KEY", "\"YOUR_API_KEY\"")
+     ```
 
-4. **Build & Run**
+4. **Build and Run**
    ```bash
    ./gradlew build
    ./gradlew installDebug
    ```
 
----
+## 📋 Features Implementation Status
 
-## 📦 Dependencies
+### ✅ Completed
+- [x] Project structure and architecture
+- [x] Material 3 theme with brand colors
+- [x] Domain models and repository interfaces
+- [x] Dependency injection setup
+- [x] ViewModels for core features
+- [x] Login/Signup screens
+- [x] Home screen with ride listings
+- [x] Safety ViewModel with AI integration
 
-See `gradle/libs.versions.toml` for complete dependency list.
+### 🔄 In Progress
+- [ ] Google Maps integration
+- [ ] Real-time ride tracking
+- [ ] Firebase authentication
+- [ ] Firestore ride database
+- [ ] Push notifications
+- [ ] Bottom navigation screens (Rides, Community, Profile)
 
-Key dependencies:
-- `androidx.compose.*` - Jetpack Compose
-- `com.google.firebase.*` - Firebase services
-- `com.google.android.gms:play-services-maps` - Google Maps
-- `com.google.ai.client.generativeai` - Gemini AI
-- `com.google.dagger:hilt-android` - Dependency Injection
-- `org.jetbrains.kotlinx:kotlinx-coroutines-*` - Coroutines
-
----
-
-## 🚀 Getting Started
-
-1. Check out the [ARCHITECTURE.md](ARCHITECTURE.md) for detailed architecture overview
-2. Review [SETUP.md](SETUP.md) for step-by-step setup guide
-3. Explore example screens in `presentation/screens/`
-
----
-
-## 📝 Development Workflow
-
-- **Create feature branch**: `git checkout -b feature/your-feature`
-- **Follow MVVM pattern**: ViewModel → Repository → API/Firebase
-- **Use Compose**: Build UI with composables, not XML
-- **Write tests**: Unit tests for ViewModels and repositories
-- **Code style**: Follow Kotlin style guide
-
----
+### 📅 Planned
+- [ ] Community features (badges, trusted neighbors)
+- [ ] Review and rating system
+- [ ] Emergency SOS functionality
+- [ ] Payment integration (Razorpay)
+- [ ] Ride history and analytics
+- [ ] Multi-language support
+- [ ] Offline mode
+- [ ] Performance optimization
 
 ## 🔐 Privacy & Security
 
-- ✅ Privacy-first approach
-- ✅ End-to-end encryption for messages
-- ✅ User data stored locally with Firestore encryption
-- ✅ No personal data sharing without consent
-- ✅ GDPR compliant
+- **Location Privacy**: Only shares location when actively finding rides
+- **Data Minimization**: Collects only essential information
+- **Encryption**: All communication over HTTPS
+- **No Tracking**: No user tracking outside of active rides
+- **User Control**: Full data export and deletion options
+
+## 📞 Support & Community
+
+- **Issues**: Report bugs on [GitHub Issues](https://github.com/Nand8282/triit-android/issues)
+- **Discussions**: Join community on [GitHub Discussions](https://github.com/Nand8282/triit-android/discussions)
+- **Email**: support@triit.dev (planned)
+
+## 📜 License
+
+MIT License - See LICENSE file for details
+
+## 👨‍💻 Development
+
+### Code Style
+- Kotlin Official Style Guide
+- 4-space indentation
+- Meaningful variable names
+- Comprehensive code comments
+
+### Testing
+- Unit tests with JUnit
+- UI tests with Compose Test Framework
+- Firebase emulator for local testing
+
+### Contributing
+
+1. Fork the repository
+2. Create feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit changes (`git commit -m 'Add AmazingFeature'`)
+4. Push to branch (`git push origin feature/AmazingFeature`)
+5. Open Pull Request
+
+## 🎓 Learning Resources
+
+- [Jetpack Compose Documentation](https://developer.android.com/jetpack/compose)
+- [Material 3 Design System](https://m3.material.io/)
+- [Firebase for Android](https://firebase.google.com/docs/android/setup)
+- [Google Generative AI](https://ai.google.dev/tutorials/android_quickstart)
+- [Android Architecture Components](https://developer.android.com/topic/architecture)
+
+## 🙏 Acknowledgments
+
+- Google for Jetpack Compose & Material Design
+- Firebase for backend services
+- Google Generative AI for safety assistance
+- The Android community for inspiration
+
+## 📱 Device Support
+
+- **Minimum API**: 24 (Android 7.0)
+- **Target API**: 34 (Android 14)
+- **Architectures**: armeabi-v7a, arm64-v8a, x86, x86_64
+- **Screen Sizes**: Phone, Tablet (Portrait & Landscape)
 
 ---
 
-## 📄 License
-
-MIT License - see LICENSE file
-
----
-
-## 🤝 Contributing
-
-Contributions are welcome! Please read [CONTRIBUTING.md](CONTRIBUTING.md)
-
----
-
-## 📞 Support
-
-For issues, feature requests, or questions, please open a GitHub issue.
-
----
-
-**Built with ❤️ for Indian commuters**
+**Made with ❤️ for Indian Commuters**
